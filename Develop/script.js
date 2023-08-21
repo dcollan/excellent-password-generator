@@ -45,13 +45,13 @@ function generatePassword() {
 // User will receive further prompts on if password will have lowercase letters, uppercase letters, numbers, and/or special characters
   if(SizeOfPassword >= 8 || SizeOfPassword <= 128) { 
     acceptLowerCase = confirm("Thanks. Will there be any lowercase letters?");
-    console.log("Lower case " + acceptLowerCase);
+    console.log("Lowercase Letters " + acceptLowerCase);
     acceptUpperCase = confirm("You got it. Any uppercase letters?");
-    console.log("Upper case " + acceptUpperCase);
+    console.log("Uppercase Letters " + acceptUpperCase);
     acceptNumericValue = confirm("Okay. Numbers then, by any chance?");
-    console.log("Number " + acceptNumericValue);
+    console.log("Numbers " + acceptNumericValue);
     acceptSpecialChar = confirm("Great, last one. Any special characters?");
-    console.log("Special Character " + acceptSpecialChar);
+    console.log("Special Characters " + acceptSpecialChar);
   }
 
   // Set up for if no options were selected, so that program will loop until at least one has been selected
@@ -59,13 +59,84 @@ function generatePassword() {
     if (acceptLowerCase === false && acceptUpperCase === false && acceptNumericValue === false && acceptSpecialChar === false) {
       selected = alert("You...didn't select one. Please choose at least one!");
       acceptLowerCase = confirm("Let's try again. Any lowercase letters?");
-      console.log("Lower case " + acceptLowerCase);
+      console.log("Lowercase Letters" + acceptLowerCase);
       acceptUpperCase = confirm("Any uppercase letters?");
-      console.log("Upper case " + acceptUpperCase);
+      console.log("Uppercase Letters" + acceptUpperCase);
       acceptNumericValue = confirm("How about numbers?");
-      console.log("Number " + acceptNumericValue);
+      console.log("Numbers " + acceptNumericValue);
       acceptSpecialChar = confirm("Special characters?");
-      console.log("Special Character " + acceptSpecialChar);
+      console.log("Special Characters " + acceptSpecialChar);
     } 
   }
+
+  // The following if-statements are for the Logic
+
+  /******** If user accepts all four to be included in the password (numbers, lowercase letters, uppercase letters, and special characters) ********/
+  if (acceptNumericValue === true && acceptLowerCase === true && acceptUpperCase === true && acceptSpecialChar === true) {
+  // Gained insight on how to properly concatenate strings from GeeksforGeeks website: https://www.geeksforgeeks.org/javascript-string-concat-method/
+    selected = number.concat(lowerCaseLtr, upperCaseLtr, specialChar);
+    console.log(selected);
+  }
+
+  /************** If user accepts only three to be included in the password *********************/
+  else if (acceptNumericValue === true && acceptLowerCase === true && acceptUpperCase === true) {
+    selected = number.concat(lowerCaseLtr, upperCaseLtr);
+    console.log(selected);
+  }
+  else if (acceptSpecialChar === true && acceptLowerCase === true && acceptUpperCase === true) {
+    selected = specialChar.concat(lowerCaseLtr, upperCaseLtr);
+    console.log(selected);
+  }
+  else if (acceptNumericValue === true && acceptLowerCase === true && acceptSpecialChar === true) {
+    selected = number.concat(lowerCaseLtr, specialChar);
+    console.log(selected);
+  }
+  else if (acceptNumericValue === true && acceptUpperCase === true && acceptSpecialChar === true) {
+    selected = number.concat(upperCaseLtr, specialChar);
+    console.log(selected);
+  }
+
+  /**************** If user accepts only two to be included in the password *********************/
+  else if (acceptLowerCase === true && acceptUpperCase === true) {
+    selected = lowerCase.concat(upperCaseLtr);
+    console.log(selected);
+  }
+  else if (acceptNumericValue === true && acceptLowerCase === true) {
+    selected = number.concat(lowerCaseLtr);
+    console.log(selected);
+  }
+  else if (acceptSpecialChar === true && acceptLowerCase === true) {
+    selected = specialChar.concat(lowerCaseLtr);
+    console.log(selected);
+  }
+  else if (acceptNumericValue === true && acceptUpperCase === true) {
+    selected = number.concat(upperCaseLtr);
+    console.log(selected);
+  }
+  else if (acceptSpecialChar === true && acceptUpperCase === true) {
+    selected = specialChar.concat(upperCaseLtr);
+    console.log(selected);
+  }
+  else if (acceptNumericValue === true && acceptSpecialChar === true) {
+    selected = number.concat(specialChar);
+    console.log(selected);
+  }
+  
+  /**************** If user accepts only one to be included in the password *********************/
+  else if (acceptNumericValue === true) {
+    selected = number;
+    console.log(selected);
+  }
+  else if (acceptLowerCase === true) {
+    selected = lowerCaseLtr;
+    console.log(selected);
+  }
+  else if (acceptUpperCase === true) {
+    selected = upperCaseLtr;
+    console.log(selected);
+  }
+  else if (acceptSpecialChar === true) {
+    selected = specialChar;
+    console.log(selected);
+  };
 }
