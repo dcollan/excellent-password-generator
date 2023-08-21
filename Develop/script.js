@@ -139,4 +139,22 @@ function generatePassword() {
     selected = specialChar;
     console.log(selected);
   };
+
+  // Set up empty array for new randomized password
+  var setEmptyArray = [];
+  
+  // Loop through concatenated array of chosen selections following the length user has specified
+  for (var i = 0; i < SizeOfPassword; i++) {
+  // Randomize indexes and save into new 'totalSelected' variable
+    var totalSelected = selected[Math.floor(Math.random() * selected.length)];
+  // Push randomized values saved from 'totalSelected' into initialized 'setEmptyArray' array
+    setEmptyArray.push(totalSelected);
+    console.log(totalSelected);
+  }
+
+  // Piece together concatenated characters into one string, and initialize into new variable 'newRandomizedPassword'
+  var newRandomizedPassword = setEmptyArray.join("");
+  console.log("Randomized Password " + newRandomizedPassword);
+  // Return final string of randomized password onto page to have displayed
+  return newRandomizedPassword;
 }
