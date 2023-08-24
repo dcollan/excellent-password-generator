@@ -22,7 +22,10 @@
 - WHEN the password is generated
 - THEN the password is either displayed in an alert or written to the page
 
-![image] (https://github.com/dcollan/excellent-password-generator/blob/main/Assets/03-javascript-homework-demo.png)
+![image](https://github.com/dcollan/excellent-password-generator/blob/main/Assets/03-javascript-homework-demo.png)
+
+## Link to Website
+https://dcollan.github.io/excellent-password-generator/
 
 ## How to Run
 1) Run 'git clone (repo link)' on Git Bash'
