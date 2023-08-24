@@ -29,33 +29,33 @@ var selected;
 // Initialized function to obtain user input using provided 'generatePassword()' method
 function generatePassword() {
 // Referred to Stack Overflow source for how to display prompt: https://stackoverflow.com/questions/37287093/starting-a-javascript-prompt-after-a-button-is-clicked
-  SizeOfPassword = prompt("Hi, there! Please enter a value between 8 and 128 for the size of your password");
+  SizeOfPassword = prompt("Hi! Please enter a value between 8 and 128 for the size of your password");
   
 // Set up boundaries on user needing to input value in between 8 and 128 (inclusively)
 // If value is outside the range, program will continue to loop until condition is satisfied
   for(var i = 0; i < number.length; i++) {
     if (SizeOfPassword < 8 || SizeOfPassword > 128) {
-      SizeOfPassword = prompt("Um. Please try again. Enter a value between 8 and 128 for your password");
+      SizeOfPassword = prompt("Please try again. Enter a value between 8 and 128 for your password");
     }
   } 
 
 // Set up if-statement regarding if value is within the range
 // User will receive further prompts on if password will have lowercase letters, uppercase letters, numbers, and/or special characters
   if(SizeOfPassword >= 8 || SizeOfPassword <= 128) { 
-    acceptLowerCase = confirm("Thanks. Will there be any lowercase letters?");
-    acceptUpperCase = confirm("You got it. Any uppercase letters?");
-    acceptNumericValue = confirm("Okay. Numbers then, by any chance?");
-    acceptSpecialChar = confirm("Great, last one. Any special characters?");
+    acceptLowerCase = confirm("Will there be any lowercase letters?");
+    acceptUpperCase = confirm("Will there be any uppercase letters?");
+    acceptNumericValue = confirm("Will there be any numbers?");
+    acceptSpecialChar = confirm("Will there be any special characters?");
   }
 
   // Set up for if no options were selected, so that program will loop until at least one has been selected
   for(var i = 0; i < number.length; i++) {
     if (acceptLowerCase === false && acceptUpperCase === false && acceptNumericValue === false && acceptSpecialChar === false) {
-      selected = alert("You...didn't select one. Please choose at least one!");
-      acceptLowerCase = confirm("Let's try again. Any lowercase letters?");
-      acceptUpperCase = confirm("Any uppercase letters?");
-      acceptNumericValue = confirm("How about numbers?");
-      acceptSpecialChar = confirm("Special characters?");
+      selected = alert("You did not select one. Please select at least one criteria.");
+      acceptLowerCase = confirm("Will there be any lowercase letters?");
+      acceptUpperCase = confirm("Will there be any uppercase letters?");
+      acceptNumericValue = confirm("Will there be any numbers?");
+      acceptSpecialChar = confirm("Will there be any special characters?");
     } 
   }
 
