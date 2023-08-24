@@ -22,6 +22,14 @@
 - WHEN the password is generated
 - THEN the password is either displayed in an alert or written to the page
 
+## Objective
+Provided with the template to an HTML and CSS code, with partial JavaScript completed in script.js, modify
+script.js so that the webpage will be able to respond to the user's requests on creating a new random
+password to have shown on screen. Upon clicking 'Generate Password', the user will be provided with a
+prompt indicating how long their password will be, ranging from 8 to 128 (inclusively). After entering,
+the user will then be asked if any lowercase, uppercase, numbers, or special characters will be included
+in the password.
+
 ![image](https://github.com/dcollan/excellent-password-generator/blob/main/Assets/03-javascript-homework-demo.png)
 
 ## Link to Website
